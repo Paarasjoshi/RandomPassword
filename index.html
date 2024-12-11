@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RandomPasswordGenerator</title>
+    <link rel="shortcut icon" href="#" type="image/x-icon">
+    <link rel="stylesheet" href="custom.css" />
+    <style>
+        body {
+            background-image:url("https://images.shiksha.com/mediadata/images/1544521434phpY8m2KM.jpeg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="one">Random Password Generator</h1>
+    <h2 class="two">Made by Paras Joshi and Soumya Brajwasi</h2>
+    <div class="main">
+        <div class="box">
+            <span id="pass-box">Testing</span>
+             <button class="copy-btn" id="copy-btn" onclick="copyms()">Copy To Clipboard</button>
+            <div class="row">
+                <div class="left">
+                    Password Length
+                </div>
+                <div class="right">
+                    <input type="number" name="" id="total-char" max="32" min="12" value="12" />
+                </div>
+            </div>
+            <div class="row">
+                <label for="upper-case">
+                    <div class="left">
+                       Contains Uppercase
+                    </div>
+                </label>
+                <div class="right">
+                    <input type="checkbox" name="" id="upper-case" checked/>
+                </div>
+            </div>
+            <div class="row">
+                <label for="lower-case">
+                    <div class="left">
+                      Contains Lowercase
+                    </div>
+                </label>
+                <div class="right">
+                    <input type="checkbox" name="" id="lower-case" />
+                </div>
+            </div>
+            <div class="row">
+                <label for="numbers">
+                    <div class="left">
+                    Contains Numbers
+                    </div>
+                </label>
+                <div class="right">
+                    <input type="checkbox" name="" id="numbers" />
+                </div>
+            </div>
+            <div class="row">
+                <label for="symbols">
+                    <div class="left">
+                    Contains Symbols
+                    </div>
+                </label>
+                <div class="right">
+                    <input type="checkbox" name="" id="symbols" />
+                </div>
+            </div>
+            <div class="row">
+                <button id="btn">
+                    Generate
+                </button>
+            </div>
+        </div>
+    </div>
+    <button class="three" type="button"><a target="_blank" href="http://github.com/paarasjoshi/randompassword">Source Code</a></button>
+    <!-- <p class ="all"> <br><br> BY: Paras Joshi and Soumya Brajwasi</br></p></body></html></p></p> -->
+    <script src="app.js">
+    </script>
+</body>
+
+</html>
