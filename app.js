@@ -1,4 +1,3 @@
-
 const upperSet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 const lowerSet = "abcdefghijklmnopqrstuvwxyz"
 const numberSet = "1234567890"
@@ -14,33 +13,38 @@ const getRandomData = (dataSet) => {
     return dataSet[Math.floor(Math.random() * dataSet.length)]
 }
 
-const generatePassword = (password = "") => {
-    if (upperInput.checked) {
-        password += getRandomData(upperSet)
+function generatePassword() {
+    const length = parseInt(document.getElementById('total-char').value, 10);
+    const useUpper = document.getElementById('upper-case').checked;
+    const useLower = document.getElementById('lower-case').checked;
+    const useNumber = document.getElementById('numbers').checked;
+    const useSymbol = document.getElementById('symbols').checked;
+
+    const selectedTypes = [useUpper, useLower, useNumber, useSymbol].filter(Boolean).length;
+
+    if (length < selectedTypes) {
+        alert(`Password length must be at least ${selectedTypes} to include all selected character types.`);
+        return;
     }
-    if (lowerInput.checked) {
-        password += getRandomData(lowerSet)
+    if (length > 32) {
+        alert("Password length must not exceed 32.");
+        return;
     }
-    if (numberInput.checked) {
-        password += getRandomData(numberSet)
-    }
-    if (symbolInput.checked) {
-        password += getRandomData(symbolSet)
-    }
-    if (password.length < totalChar.value) {
-        return generatePassword(password)
-    }
-    
-    if(password.length<12)
-    {
-        alert("Password should be greater than 12 ");
-        return -1;
-        
-    }
-    if(password.length>32)
-    {
-        alert("Password should be lesser than 32 ");
-        return -1;
+
+    let password = "";
+    while (password.length < length) {
+        if (useUpper) {
+            password += getRandomData(upperSet)
+        }
+        if (useLower) {
+            password += getRandomData(lowerSet)
+        }
+        if (useNumber) {
+            password += getRandomData(numberSet)
+        }
+        if (useSymbol) {
+            password += getRandomData(symbolSet)
+        }
     }
     passBox.innerText = truncateString(password, totalChar.value);
 }
